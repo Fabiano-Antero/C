@@ -1,0 +1,107 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	setlocale(LC_ALL,"Portuguese");
+	char opcao;
+	int x,y=0,n1,n2,r;
+	int continuar=1;
+	
+	puts("---------------------------------------");
+	puts("------------Calculadora----------------");
+	puts("---------------------------------------");
+	puts("|Digite + prara Soma|");
+	puts("|Digite - prara subtração|");
+	puts("|Digite * prara Multiplicação|");
+	puts("|Digite / prara Divisão|");
+	puts("---------------------------------------");
+	
+	printf("Digite uma opcão: ");
+	scanf("%c", &opcao);
+	fflush(stdin);
+	
+	while(continuar)
+	{
+		for(x=0;x<=1;x++)
+		{
+			if(opcao !='+' && opcao!='-' && opcao!='*' && opcao!='/')
+			{
+			printf("Digite uma opcão: ");
+			scanf("%c", &opcao,x--);
+			fflush(stdin);	
+			}
+		}
+		
+		switch(opcao)
+		{
+			case '+':
+				{
+					printf("Digite o %dº valor: ", ++y);
+					scanf("%d", &n1);
+					printf("Digite o %dº valor: ", ++y);
+					scanf("%d", &n2);
+					r =(n1+n2);
+					printf("Resultado: %d\n",r);
+					y=0;
+				}break;
+			case '-':
+				{
+					printf("Digite o %dº valor: ", ++y);
+					scanf("%d", &n1);
+					printf("Digite o %dº valor: ", ++y);
+					scanf("%d", &n2);
+					r =(n1-n2);
+					printf("Resultado: %d\n",r);
+					y=0;
+				}break;
+			case '*':
+				{
+					printf("Digite o %dº valor: ", ++y);
+					scanf("%d", &n1);
+					printf("Digite o %dº valor: ", ++y);
+					scanf("%d", &n2);
+					r =(n1*n2);
+					printf("Resultado: %d\n",r);
+					y=0;
+				}break;
+			case '/':
+				{
+					printf("Digite o %dº valor: ", ++y);
+					scanf("%d", &n1);
+					printf("Digite o %dº valor: ", ++y);
+					scanf("%d", &n2);
+					r =(n1/n2);
+					printf("Resultado: %d\n",r);
+					y=0;
+				}break;
+		}
+		for(x=0;x<=1;x++)
+		{
+			if(opcao !='s' && opcao!='n')
+			{
+			puts("---------------------------------------");
+			printf("\nDeseja continuar? (s)para sim (n)para não: ");
+		    scanf(" %c",&opcao,x--);
+		    puts("---------------------------------------");
+			fflush(stdin);
+			}
+		}
+		
+	    
+		switch(opcao)
+		{
+			case 's':
+				{
+					
+				}break;
+			case 'n':
+				{
+					continuar=0;
+				}break;
+		}
+	}
+	return 0;
+}
