@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 			{
 			printf("Digite uma opcão: ");
 			scanf("%c", &opcao,x--);
-			fflush(stdin);	
+			fflush(stdin);	/* apaga o ultimo entre */ 
 			}
 		}
 		
@@ -78,15 +78,16 @@ int main(int argc, char *argv[]) {
 					y=0;
 				}break;
 		}
+		
 		for(x=0;x<=1;x++)
 		{
 			if(opcao !='s' && opcao!='n')
 			{
 			puts("---------------------------------------");
 			printf("\nDeseja continuar? (s)para sim (n)para não: ");
-		    scanf(" %c",&opcao,x--);
-		    puts("---------------------------------------");
-			fflush(stdin);
+		        scanf(" %c",&opcao,x--);
+		        puts("---------------------------------------");
+			fflush(stdin); /* apaga o ultimo entre */ 
 			}
 		}
 		
